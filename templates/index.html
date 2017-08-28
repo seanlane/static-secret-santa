@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style type="text/css">
+      a.list-group-item:nth-child(odd) {
+        background-color: #c3e6cb;
+        color: #155724;
+      }
+
+      a.list-group-item:nth-child(even) {
+        background-color: #f5c6cb;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-sm-6"  style="padding-bottom: 25px;">
+          <img src="../images/logo.gif" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-sm-6"  style="padding-bottom: 25px;">
+          <div class="list-group">
+          {{#persons}}
+            <a href="./{{name}}/index.html" class="list-group-item list-group-item-action">{{name}}</a>
+          {{/persons}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Optional JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,58 @@
+{
+	"Amy": {
+		"name": "Amy",
+		"receive_from": null,
+		"give_to": "Mildred",
+		"email": "amy@example.com",
+		"nomatch": ["Steve"]
+	},
+	"Bob": {
+		"name": "Bob",
+		"receive_from": null,
+		"give_to": null,
+		"email": "bob@example.com",
+		"nomatch": ["Mildred"]
+	},
+	"Charlie": {
+		"name": "Charlie",
+		"receive_from": null,
+		"give_to": null,
+		"email": "charlie@example.com",
+		"nomatch": ["Stacy"]
+	},
+	"Mildred": {
+		"name": "Mildred",
+		"receive_from": "Amy",
+		"give_to": null,
+		"email": "mildred@example.com",
+		"nomatch": ["Bob"]
+	},
+	"Steve": {
+		"name": "Steve",
+		"receive_from": null,
+		"give_to": null,
+		"email": "steve@example.com",
+		"nomatch": ["Amy"]
+	},
+	"Alexus": {
+		"name": "Alexus",
+		"receive_from": null,
+		"give_to": null,
+		"email": "alexus@example.com",
+		"nomatch": ["Travis"]
+	},
+	"Stacy": {
+		"name": "Stacy",
+		"receive_from": null,
+		"give_to": null,
+		"email": "stacy@example.com",
+		"nomatch": ["Kyle"]
+	},
+	"Travis": {
+		"name": "Travis",
+		"receive_from": null,
+		"give_to": null,
+		"email": "travis@example.com",
+		"nomatch": ["Alexus"]
+	}
+}
