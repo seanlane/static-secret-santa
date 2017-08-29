@@ -1,9 +1,11 @@
-var assert = require('assert');
-var CryptoJS = require("crypto-js");
-var fs = require('fs');
-var generator = require('generate-password');
-var Mustache = require('mustache');
-var People = require('./people.json');
+const assert = require('assert');
+const CryptoJS = require("crypto-js");
+const fs = require('fs');
+const generator = require('generate-password');
+const Mustache = require('mustache');
+
+const Config = require('/config.json');
+const People = require('./people.json');
 
 console.log("Starting up");
 
@@ -108,7 +110,7 @@ for (person of Object.values(People)) {
 
   var unencrypted = Mustache.render(assignment_template, {
       "name": person.give_to, 
-      "date":"December 25th, 2017"
+      "date":Config.date
     });
   var passphrase = generator.generate({
     length: 15,
@@ -123,8 +125,9 @@ for (person of Object.values(People)) {
   var encryptedMsg = hmac + encrypted;
 
   var params = {
-    "instructions": "Enter the password sent by Santa himself to become a secret Santa. (Hint: You can find these passwords in the final.json file).", 
-    "encrypted": encryptedMsg, "title": "🎄 " +  person.name + "'s Secret Santa Assignment"}
+    "instructions": Config.instructions,
+    "encrypted": encryptedMsg, 
+    "title": "🎄 " +  person.name + "'s Secret Santa Assignment"}
   var final = Mustache.render(crypt_template, params);
 
   var encryptedMsg = encryptedMsg,

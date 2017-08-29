@@ -1,0 +1,8 @@
+{
+	"date": "December 25th, 2017",
+	"instructions": "Enter the password sent by Santa himself to become a secret Santa. (Hint: You can find these passwords in the final.json file).", 
+	"url": "santa.example.com",
+	"email_host": "smtp.example.com",
+	"email_user": "santa@example.com",
+	"email_pass": "super_secret_password"
+}

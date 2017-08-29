@@ -6,7 +6,7 @@ This is a fairly rough project, but I cranked it out over a few hours on a weeke
 
 ## Dependencies
 
-Not strictly version specific, but these are the versions I used:
+This project depends on NodeJS and npm. I used version 8.4.0, but anything fairly recent to 2017 should work. As for packages, the project shouldn't strictly be version specific, but these are the versions I used:
 
 | Name | Version | Reason |
 |------|---------|--------|
@@ -24,11 +24,24 @@ I was mainly inspired and used the code from two main projects:
 
 I also utilized a CodePen, [Nicky Christensen's](https://codepen.io/NickyCDK) [CSS3 Snow Animation](https://codepen.io/NickyCDK/pen/AIonk), which I thought added some extra flair.
 
+## Installation
+
+Install NodeJS, clone this project, and then from within the root directory of the project run `npm install`.
+
 ## Setup and Use
 
-A number of things need to be configured. First, the information needed should be placed in the `people.json` file. It is a key/value pair file, where the name of each person is the key and that along with other information is the value as a JSON object. The names are expected to be unique. There are fields to manually assign someone if you would like to do so, otherwise leave them as `null`. An example of this can be seen, where Amy has been assigned to Mildred already, and Mildred is marked accordingly as receiving from Amy. 
+A number of things need to be configured. First, the information needed should be placed in the `people.json` file. It is a key/value pair file, where the name of each person is the key and that along with other information is the value as a JSON object. The names are expected to be unique. There are fields to manually assign someone if you would like to do so, otherwise leave them as `null`. An example of this can be seen, where Amy has been assigned to Mildred already, and Mildred is marked accordingly as receiving from Amy. You can also indicate persons that should not be matched together, like siblings, spouses, etc. Just add them to the array of `nomatch`, and they will not be matched together.
 
-You can also indicate persons that should not be matched together, like siblings, spouses, etc. Just add them to the array of `nomatch`, and they will not be matched together.
+Second, you'll need to change the configuration parameters in `config.json`:
+
+* `date` will be the delievery date inserted into each assignment page template
+* `instructions` will be inserted into the prompt on the encrypted page, so instruct your users to decrypt the page with the passwords received via email
+* `url` is the URL where the static site will reside
+* `email_host`, `email_user`, `email_pass` are the hostname, username, and password are the respective fields needed to login and send email via an SMTP server. For instructions on how to obtain and use those, please visit the Support section of your email provider.
+
+Once all that is done, run `node index.js` to generate all of the matches, passwords, and site materials. Copy the contents of the `site` folder to your web server for hosting, it's good to go.
+
+Lastly, run `email.js` to email the passwords to all of the participants.
 
 ## Algorithm
 
