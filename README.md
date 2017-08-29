@@ -45,7 +45,7 @@ Lastly, run `email.js` to email the passwords to all of the participants.
 
 ## Algorithm
 
-Interestingly enough, Secret Santa is an NP-complete problem, since it is the same as finding a Hamiltonian Path in a graph. Each person is a node, and where there are links leaving this node are people whom this person can give to. My algorithm used is ugly, but gets the job done for the time being.
+Interestingly enough, [Secret Santa is an NP-complete problem](https://blogs.msdn.microsoft.com/steverowe/2006/12/19/secret-santa-is-np-complete/), since it is the same as finding a Hamiltonian Path in a graph. Each person is a node, and where there are links leaving this node are people whom this person can give to. My algorithm used is ugly, but gets the job done for the time being.
 
 First, it couples together any nodes manually linked in `people.json` and interprets them as one node. Then, we greedily take the nodes and try to find a path. If the current node has multiple paths it can choose from, we shuffle the possibilites and pick one. If we cannot find a valid path, it returns and tries it again, up to 100 times (as currently hard coded).
 
