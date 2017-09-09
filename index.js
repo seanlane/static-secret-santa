@@ -4,7 +4,7 @@ const fs = require('fs');
 const generator = require('generate-password');
 const Mustache = require('mustache');
 
-const Config = require('/config.json');
+const Config = require('./config.json');
 const People = require('./people.json');
 
 console.log("Starting up");
